@@ -1,66 +1,352 @@
 # Job Postings Skill Demand
 
-**Topic 26 - Capstone Project Briefs, pages 104-107**  
-**Student ID:** 23051560
+## Project Information
 
-This project is a working Databricks and Snowflake pipeline for analyzing technology skill demand in a **synthetic** job-postings dataset. It generates raw data, applies Bronze/Silver/Gold transformations, exports curated CSV files, loads them into Snowflake, and validates three analytical outputs.
+**Project:** Job Postings Skill Demand Analysis\
+**Student Name:** Srideep Adak\
+**Roll Number:** 23051631\
+**Technology Stack:** Databricks, Apache Spark, PySpark, Snowflake,
+Python, SQL\
+**Dataset:** Synthetic job-postings dataset
 
-The live project evidence passed end to end: two complete local Spark runs passed 31 checks; Databricks passed 26 notebook expectations and a scheduled run; cloud exports reconciled with local data; Snowflake loaded all files, skipped a repeat load safely, and passed 14 of 14 full-result checks.
+------------------------------------------------------------------------
 
-## Dashboard
+## Project Overview
 
-The static dashboard is in [`docs/`](docs/). It has no credentials or build step. Open `docs/index.html` through a static host, or enable GitHub Pages from the `main` branch and `/docs` folder.
+This project develops an end-to-end **Databricks and Snowflake data
+pipeline** for analyzing technology skill demand in synthetic job
+postings.
 
-## Project brief
+The pipeline generates job-posting data, processes it through **Bronze,
+Silver, and Gold data layers**, performs data-quality checks, exports
+curated datasets, and loads the results into Snowflake for analytical
+queries.
 
-Build a Databricks and Snowflake data pipeline to analyze technology skill demand in synthetic job postings. The project ingests raw data into Bronze, removes duplicate and invalid postings and standardizes skill names in Silver, and calculates monthly demand and skill co-occurrence in Gold. Curated CSV exports are staged and loaded into Snowflake to identify the top ten skills each month, quarter-on-quarter changes in skill share, and the top three companion skills. Data-quality checks, repeatable loads and a scheduled Databricks job support reliable and reproducible processing.
+The project focuses on three main business questions:
 
-## Repository layout
+1.  What are the **top 10 skills by posting count for each month**?
+2.  Which skills are **growing fastest quarter over quarter**?
+3.  Which skills **frequently appear together** in the same job posting?
 
-| Folder | Contents |
-| --- | --- |
-| `src/` | Synthetic-data generator and Spark transformation pipeline. |
-| `databricks/` | Self-contained Databricks notebook and notebook builder. |
-| `snowflake/` | Setup, `COPY INTO`, analytical query and full-result verification SQL. |
-| `exports/` | Compact Gold layer CSV outputs used for inspection and dashboard provenance. |
-| `verification/` | Local result reports, expected query results and final evidence summary. |
-| `docs/` | Responsive hosted dashboard source. |
-| `report/` | Final capstone report PDF. |
+------------------------------------------------------------------------
 
-## Run the pipeline locally
+## Problem Statement
 
-Requirements: Python 3.11+, a Spark-compatible JDK, PySpark 4.0.1 and DuckDB.
+A training organization needs to understand which technology skills are
+appearing most frequently in job postings so that its curriculum can be
+aligned with current skill demand.
 
-```powershell
+The source data is synthetic and contains deliberately messy records,
+including:
+
+-   Duplicate job postings
+-   Missing or empty skills
+-   `"Not specified"` skills
+-   Unknown company IDs
+-   Invalid dates
+-   Different spellings and capitalization of the same skill
+-   Extra spaces and inconsistent separators
+
+The pipeline cleans and standardizes this data before producing reliable
+analytical outputs.
+
+------------------------------------------------------------------------
+
+## Data Pipeline Architecture
+
+``` text
+Synthetic Job Postings
+        |
+        v
+   Bronze Layer
+        |
+        | Raw data ingestion
+        v
+    Silver Layer
+        |
+        | Deduplication
+        | Skill splitting
+        | Skill normalization
+        | Data-quality filtering
+        v
+     Gold Layer
+        |
+        | Monthly skill demand
+        | Quarterly skill trends
+        | Skill co-occurrence
+        v
+   CSV Exports
+        |
+        v
+    Snowflake
+        |
+        | SQL Analysis
+        v
+   Final Insights
+```
+
+------------------------------------------------------------------------
+
+## Bronze Layer
+
+The Bronze layer stores the generated job-posting data with minimal
+transformation.
+
+The pipeline preserves the original skill strings so that the raw data
+remains available for validation and comparison.
+
+The generated dataset contains:
+
+-   **54,000 valid target postings**
+-   Additional deliberately malformed and duplicate records used for
+    data-quality validation
+-   Company, sector, city, skill, and posting-date information
+
+------------------------------------------------------------------------
+
+## Silver Layer
+
+The Silver layer prepares the data for analysis.
+
+### Main transformations
+
+1.  **Deduplication**\
+    Duplicate postings are identified and removed before skill
+    processing.
+
+2.  **Skill splitting**\
+    Skills are split using the required character-class separator logic
+    rather than a simple delimiter split.
+
+3.  **Skill normalization**\
+    Skill names are standardized by trimming spaces, removing unwanted
+    punctuation, and normalizing capitalization.
+
+4.  **Data-quality filtering**\
+    Invalid records are rejected with reasons such as:
+
+    -   `no_skills_listed`
+    -   `not_specified`
+    -   `unknown_company`
+    -   `unparseable_date`
+
+5.  **Validation**\
+    The Silver layer is checked against the expected row counts and
+    data-quality conditions.
+
+------------------------------------------------------------------------
+
+## Gold Layer
+
+The Gold layer contains curated analytical datasets.
+
+### Skill-Month
+
+Contains monthly skill-demand information, including:
+
+-   Skill
+-   Month
+-   Number of postings with the skill
+-   Total postings in the month
+-   Skill share
+-   Monthly rank
+
+### Skill Pairs
+
+Contains skill co-occurrence information, including:
+
+-   Skill A
+-   Skill B
+-   Month
+-   Number of postings containing both skills
+-   Confidence
+-   Lift
+
+These outputs support monthly demand analysis, quarter-over-quarter
+comparisons, and skill-combination analysis.
+
+------------------------------------------------------------------------
+
+## Snowflake Analysis
+
+The curated Gold-layer CSV files are loaded into Snowflake.
+
+Snowflake is used to answer the final analytical questions:
+
+### 1. Top 10 skills by month
+
+Identifies the ten most frequently occurring skills for every month in
+the dataset.
+
+### 2. Fastest-growing skills
+
+Compares skill share across quarters to identify changes in demand over
+time.
+
+### 3. Skill combinations
+
+Uses pair counts, confidence, and lift to identify skills that commonly
+occur together in job postings.
+
+------------------------------------------------------------------------
+
+## Data Quality and Verification
+
+The project includes validation at multiple stages.
+
+Important checks include:
+
+  Check                                Result
+  ------------------------------- -----------
+  Generated input rows                 55,350
+  Valid postings after cleaning        51,840
+  Duplicate rows removed                1,350
+  Canonical skills                         20
+  Raw skill variants                       57
+  Skill-month rows                        360
+  Pair-month rows                       6,660
+  Snowflake verification checks     14 passed
+
+The pipeline also verifies that repeated Snowflake loads do not create
+duplicate records.
+
+------------------------------------------------------------------------
+
+## Repository Structure
+
+``` text
+Job-posting-skill-demand/
+│
+├── databricks/
+│   ├── Databricks notebook
+│   └── Notebook builder
+│
+├── docs/
+│   └── index.html              # Project dashboard
+│
+├── exports/
+│   └── Gold-layer CSV outputs
+│
+├── snowflake/
+│   ├── Setup and load SQL
+│   ├── Analysis SQL
+│   └── Verification SQL
+│
+├── src/
+│   ├── Synthetic-data generator
+│   └── Spark transformation pipeline
+│
+├── verification/
+│   ├── Validation scripts
+│   ├── Expected results
+│   └── Verification reports
+│
+├── PROJECT_BRIEF.md
+├── SUBMISSION_DETAILS.md
+├── README.md
+└── LICENSE
+```
+
+------------------------------------------------------------------------
+
+## Running the Project Locally
+
+### Requirements
+
+-   Python 3.11+
+-   Java/JDK compatible with the Spark setup
+-   PySpark 4.0.1
+-   DuckDB
+
+Run the local verification pipeline:
+
+``` powershell
 python verification/run_local.py
 ```
 
-Run the command twice to compare deterministic export fingerprints. The original PDF generator is kept in `src/generator.py`; `src/generator_compatible.py` applies the Spark 4-compatible integer date-offset cast used for the verified run.
+Running the pipeline more than once can be used to verify deterministic
+outputs and export fingerprints.
 
-## Run on Databricks and Snowflake
+------------------------------------------------------------------------
 
-1. Import `databricks/23051560_Job_Postings_Skill_Demand.ipynb` and run all cells on a Databricks serverless environment.
-2. Download the three CSV exports produced by the notebook.
-3. In Snowflake, run `snowflake/01_setup_load_verify.sql`, upload the CSV files to the named stage, and execute the load sections.
-4. Run `snowflake/02_analysis.sql` and `snowflake/03_full_result_verification.sql`.
-5. Compare outputs with the expected result CSVs in `verification/results/`.
+## Running on Databricks
 
-The Databricks part of the project is schedulable. The tested CSV handoff to Snowflake is manual and is documented as such.
+1.  Import the project notebook from the `databricks/` directory.
+2.  Run the notebook in a Databricks environment.
+3.  Verify the Bronze, Silver, and Gold processing steps.
+4.  Download the generated Gold-layer CSV exports.
+5.  Compare the outputs with the expected verification results.
 
-## Verification summary
+The Databricks workflow is designed to be schedulable.
 
-| Check | Verified result |
-| --- | --- |
-| Valid postings | 51,840 from 55,350 generated inputs |
-| Canonical skills | 20 from 57 raw variants |
-| Databricks scheduled run | Succeeded in 2 minutes 42 seconds |
-| Cloud curated outputs | 360 skill-month and 6,660 pair-month rows reconciled |
-| Snowflake first load | 360, 6,660 and 227,624 rows; zero errors |
-| Repeat load | All files `LOAD_SKIPPED`; zero duplicate rows |
-| Snowflake verification | 14 passed, 0 failed |
+------------------------------------------------------------------------
 
-See [`verification/FINAL_VERIFICATION.md`](verification/FINAL_VERIFICATION.md) for the complete scope and evidence.
+## Loading Data into Snowflake
 
-## Scope statement
+After generating the Gold-layer CSV files:
 
-All conclusions in this repository describe a fixed synthetic dataset covering January 2024 through June 2025. The project does not scrape live job listings, make labour-market predictions, or claim unattended Databricks-to-Snowflake integration.
+1.  Set up the Snowflake objects using the SQL scripts in `snowflake/`.
+2.  Upload the CSV files to the configured stage.
+3.  Execute the `COPY INTO` load.
+4.  Run the analytical SQL queries.
+5.  Run the verification SQL to confirm the expected results.
+
+The tested CSV transfer from Databricks to Snowflake is a documented
+manual handoff.
+
+------------------------------------------------------------------------
+
+## Dashboard
+
+A static project dashboard is available in the `docs/` directory.
+
+The dashboard can be hosted using **GitHub Pages** with:
+
+``` text
+Source: Deploy from a branch
+Branch: main
+Folder: /docs
+```
+
+Live dashboard:
+
+**https://srideep-adak.github.io/Job-posting-skill-demand/**
+
+------------------------------------------------------------------------
+
+## Key Technologies
+
+-   **Python** --- Data generation and pipeline logic
+-   **PySpark / Apache Spark** --- Large-scale data transformation
+-   **Databricks** --- Cloud data processing and scheduled execution
+-   **Snowflake** --- Data warehousing and analytical SQL
+-   **SQL** --- Data loading, analysis, and validation
+-   **GitHub** --- Version control and project documentation
+-   **GitHub Pages** --- Static project dashboard hosting
+
+------------------------------------------------------------------------
+
+## Project Scope
+
+This project uses a **fixed synthetic dataset** covering **January 2024
+through June 2025**.
+
+The project is intended to demonstrate a reproducible data-engineering
+workflow for skill-demand analysis. It does not scrape live job
+listings, make labour-market predictions, or claim unattended
+Databricks-to-Snowflake integration.
+
+------------------------------------------------------------------------
+
+## Author
+
+**Srideep Adak**\
+**Roll Number:** 23051631
+
+GitHub: **Srideep-Adak**
+
+------------------------------------------------------------------------
+
+## License
+
+This project is provided for educational and academic purposes.
