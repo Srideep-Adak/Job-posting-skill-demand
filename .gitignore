@@ -1,0 +1,18 @@
+# Python and Spark artifacts
+__pycache__/
+*.py[cod]
+.runtime-venv/
+.venv/
+spark-warehouse/
+metastore_db/
+
+# Local data and large generated exports
+data/raw/
+exports/silver_posting_skill.csv
+verification/cloud_exports/
+*.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/

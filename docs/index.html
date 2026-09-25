@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Verified capstone dashboard for the Job Postings Skill Demand Databricks and Snowflake pipeline.">
+    <title>Job Postings Skill Demand</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip" href="#overview">Skip to dashboard</a>
+    <header class="hero">
+      <nav class="nav wrap" aria-label="Main navigation">
+        <a class="brand" href="#overview">JPSD<span>26</span></a>
+        <div class="nav-links"><a href="#evidence">Evidence</a><a href="#results">Results</a><a href="#pipeline">Pipeline</a></div>
+      </nav>
+      <section class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Databricks and Snowflake capstone</p>
+          <h1>Job Postings<br><em>Skill Demand</em></h1>
+          <p class="lede">A verified data pipeline that turns synthetic job postings into quality-checked skill trends and companion-skill analysis.</p>
+          <div class="pills"><span>Topic 26</span><span>Jan 2024 - Jun 2025</span><span>End-to-end verified</span></div>
+        </div>
+        <aside class="status-card" aria-label="Verification status">
+          <div class="status-dot"></div>
+          <p>Final feasibility verdict</p>
+          <strong>PASS</strong>
+          <small>Local Spark, Databricks, cloud CSV reconciliation and Snowflake all completed successfully.</small>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section id="overview" class="wrap section overview">
+        <p class="eyebrow dark">Project scope</p>
+        <h2>Evidence you can inspect</h2>
+        <p class="intro" id="scope"></p>
+        <div class="facts" id="facts" aria-label="Project headline metrics"></div>
+      </section>
+
+      <section id="results" class="section surface">
+        <div class="wrap">
+          <div class="section-head"><div><p class="eyebrow dark">Monthly skill demand</p><h2>Follow one skill across 18 months</h2></div><label class="select-label" for="skill-select">Selected skill <select id="skill-select" aria-label="Choose a skill trend"></select></label></div>
+          <div class="chart-card">
+            <div class="chart-summary"><span id="chart-title">Snowflake</span><strong id="chart-latest"></strong><small id="chart-change"></small></div>
+            <svg id="trend-chart" role="img" aria-label="Monthly skill mentions trend" viewBox="0 0 900 360" preserveAspectRatio="none"></svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap section two-col">
+        <div>
+          <p class="eyebrow dark">June 2025 snapshot</p><h2>Top skills in the final month</h2>
+          <div class="table-wrap"><table><thead><tr><th>Rank</th><th>Skill</th><th>Mentions</th><th>Share</th></tr></thead><tbody id="latest-table"></tbody></table></div>
+        </div>
+        <div class="companions">
+          <p class="eyebrow dark">Co-occurrence</p><h2>Snowflake companion skills</h2>
+          <p>Directional confidence shows the share of Snowflake postings that also mention the companion skill in June 2025.</p>
+          <div id="companions-list"></div>
+        </div>
+      </section>
+
+      <section id="pipeline" class="section ink">
+        <div class="wrap">
+          <p class="eyebrow">Data path</p><h2>Designed for traceability, not just a demo</h2>
+          <div class="pipeline">
+            <article><span>01</span><h3>Source</h3><p>55,350 generated job postings and 400 companies.</p></article>
+            <i aria-hidden="true">→</i>
+            <article><span>02</span><h3>Databricks</h3><p>Bronze provenance, Silver cleaning and Gold metrics.</p></article>
+            <i aria-hidden="true">→</i>
+            <article><span>03</span><h3>Snowflake</h3><p>Named stage, COPY validation and analytical SQL.</p></article>
+            <i aria-hidden="true">→</i>
+            <article><span>04</span><h3>Proof</h3><p>Fingerprints, reconciliation and repeat-load checks.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="evidence" class="wrap section evidence-grid">
+        <div><p class="eyebrow dark">Data quality</p><h2>Every rejected record has a reason</h2><p>Quality controls are applied before skill expansion, preventing bad records from changing downstream demand or co-occurrence measures.</p><div id="quality" class="quality-grid"></div></div>
+        <div><p class="eyebrow dark">Validation trail</p><h2>What was checked</h2><div id="validation" class="validation-list"></div></div>
+      </section>
+    </main>
+    <footer><div class="wrap"><strong>Job Postings Skill Demand</strong><span>Topic 26 | Student ID 23051560 | Synthetic dataset</span></div></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

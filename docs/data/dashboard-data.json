@@ -1,0 +1,2376 @@
+{
+  "project": {
+    "name": "Job Postings Skill Demand",
+    "topic": "Topic 26 - Capstone Project Briefs, pages 104-107",
+    "scope": "Synthetic job postings from January 2024 through June 2025. The dashboard describes this generated dataset, not the live job market."
+  },
+  "facts": [
+    {
+      "label": "Input postings",
+      "value": "55,350",
+      "note": "synthetic source records"
+    },
+    {
+      "label": "Valid postings",
+      "value": "51,840",
+      "note": "retained after quality checks"
+    },
+    {
+      "label": "Canonical skills",
+      "value": "20",
+      "note": "from 57 raw variants"
+    },
+    {
+      "label": "Snowflake checks",
+      "value": "14 / 14",
+      "note": "passed with zero failures"
+    }
+  ],
+  "quality": [
+    [
+      "Duplicate postings",
+      "1,350"
+    ],
+    [
+      "Missing skill",
+      "1,350"
+    ],
+    [
+      "Unknown company",
+      "540"
+    ],
+    [
+      "Invalid date",
+      "270"
+    ]
+  ],
+  "months": [
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06"
+  ],
+  "series": {
+    "airflow": [
+      {
+        "month": "2024-01",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 7
+      },
+      {
+        "month": "2024-02",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 8
+      },
+      {
+        "month": "2024-03",
+        "mentions": 367,
+        "share": 12.74,
+        "rank": 16
+      },
+      {
+        "month": "2024-04",
+        "mentions": 548,
+        "share": 19.03,
+        "rank": 13
+      },
+      {
+        "month": "2024-05",
+        "mentions": 2625,
+        "share": 91.15,
+        "rank": 1
+      },
+      {
+        "month": "2024-06",
+        "mentions": 1793,
+        "share": 62.26,
+        "rank": 1
+      },
+      {
+        "month": "2024-07",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 19
+      },
+      {
+        "month": "2024-08",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 4
+      },
+      {
+        "month": "2024-09",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 4
+      },
+      {
+        "month": "2024-10",
+        "mentions": 555,
+        "share": 19.27,
+        "rank": 14
+      },
+      {
+        "month": "2024-11",
+        "mentions": 357,
+        "share": 12.4,
+        "rank": 18
+      },
+      {
+        "month": "2024-12",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 4
+      },
+      {
+        "month": "2025-01",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 12
+      },
+      {
+        "month": "2025-02",
+        "mentions": 484,
+        "share": 16.81,
+        "rank": 14
+      },
+      {
+        "month": "2025-03",
+        "mentions": 360,
+        "share": 12.5,
+        "rank": 16
+      },
+      {
+        "month": "2025-04",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 4
+      },
+      {
+        "month": "2025-05",
+        "mentions": 562,
+        "share": 19.51,
+        "rank": 11
+      },
+      {
+        "month": "2025-06",
+        "mentions": 342,
+        "share": 11.88,
+        "rank": 19
+      }
+    ],
+    "aws": [
+      {
+        "month": "2024-01",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 3
+      },
+      {
+        "month": "2024-02",
+        "mentions": 472,
+        "share": 16.39,
+        "rank": 13
+      },
+      {
+        "month": "2024-03",
+        "mentions": 331,
+        "share": 11.49,
+        "rank": 17
+      },
+      {
+        "month": "2024-04",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 7
+      },
+      {
+        "month": "2024-05",
+        "mentions": 582,
+        "share": 20.21,
+        "rank": 10
+      },
+      {
+        "month": "2024-06",
+        "mentions": 404,
+        "share": 14.03,
+        "rank": 16
+      },
+      {
+        "month": "2024-07",
+        "mentions": 511,
+        "share": 17.74,
+        "rank": 15
+      },
+      {
+        "month": "2024-08",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 6
+      },
+      {
+        "month": "2024-09",
+        "mentions": 2370,
+        "share": 82.29,
+        "rank": 1
+      },
+      {
+        "month": "2024-10",
+        "mentions": 1807,
+        "share": 62.74,
+        "rank": 1
+      },
+      {
+        "month": "2024-11",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 4
+      },
+      {
+        "month": "2024-12",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 7
+      },
+      {
+        "month": "2025-01",
+        "mentions": 556,
+        "share": 19.31,
+        "rank": 14
+      },
+      {
+        "month": "2025-02",
+        "mentions": 359,
+        "share": 12.47,
+        "rank": 17
+      },
+      {
+        "month": "2025-03",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 4
+      },
+      {
+        "month": "2025-04",
+        "mentions": 569,
+        "share": 19.76,
+        "rank": 10
+      },
+      {
+        "month": "2025-05",
+        "mentions": 458,
+        "share": 15.9,
+        "rank": 14
+      },
+      {
+        "month": "2025-06",
+        "mentions": 359,
+        "share": 12.47,
+        "rank": 16
+      }
+    ],
+    "azure": [
+      {
+        "month": "2024-01",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 4
+      },
+      {
+        "month": "2024-02",
+        "mentions": 434,
+        "share": 15.07,
+        "rank": 14
+      },
+      {
+        "month": "2024-03",
+        "mentions": 477,
+        "share": 16.56,
+        "rank": 14
+      },
+      {
+        "month": "2024-04",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 8
+      },
+      {
+        "month": "2024-05",
+        "mentions": 571,
+        "share": 19.83,
+        "rank": 11
+      },
+      {
+        "month": "2024-06",
+        "mentions": 329,
+        "share": 11.42,
+        "rank": 19
+      },
+      {
+        "month": "2024-07",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 5
+      },
+      {
+        "month": "2024-08",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 7
+      },
+      {
+        "month": "2024-09",
+        "mentions": 563,
+        "share": 19.55,
+        "rank": 11
+      },
+      {
+        "month": "2024-10",
+        "mentions": 1410,
+        "share": 48.96,
+        "rank": 2
+      },
+      {
+        "month": "2024-11",
+        "mentions": 2727,
+        "share": 94.69,
+        "rank": 1
+      },
+      {
+        "month": "2024-12",
+        "mentions": 573,
+        "share": 19.9,
+        "rank": 10
+      },
+      {
+        "month": "2025-01",
+        "mentions": 458,
+        "share": 15.9,
+        "rank": 15
+      },
+      {
+        "month": "2025-02",
+        "mentions": 359,
+        "share": 12.47,
+        "rank": 18
+      },
+      {
+        "month": "2025-03",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 5
+      },
+      {
+        "month": "2025-04",
+        "mentions": 569,
+        "share": 19.76,
+        "rank": 11
+      },
+      {
+        "month": "2025-05",
+        "mentions": 383,
+        "share": 13.3,
+        "rank": 16
+      },
+      {
+        "month": "2025-06",
+        "mentions": 532,
+        "share": 18.47,
+        "rank": 12
+      }
+    ],
+    "databricks": [
+      {
+        "month": "2024-01",
+        "mentions": 400,
+        "share": 13.89,
+        "rank": 15
+      },
+      {
+        "month": "2024-02",
+        "mentions": 418,
+        "share": 14.51,
+        "rank": 15
+      },
+      {
+        "month": "2024-03",
+        "mentions": 436,
+        "share": 15.14,
+        "rank": 15
+      },
+      {
+        "month": "2024-04",
+        "mentions": 454,
+        "share": 15.76,
+        "rank": 16
+      },
+      {
+        "month": "2024-05",
+        "mentions": 472,
+        "share": 16.39,
+        "rank": 14
+      },
+      {
+        "month": "2024-06",
+        "mentions": 490,
+        "share": 17.01,
+        "rank": 13
+      },
+      {
+        "month": "2024-07",
+        "mentions": 508,
+        "share": 17.64,
+        "rank": 16
+      },
+      {
+        "month": "2024-08",
+        "mentions": 526,
+        "share": 18.26,
+        "rank": 13
+      },
+      {
+        "month": "2024-09",
+        "mentions": 544,
+        "share": 18.89,
+        "rank": 13
+      },
+      {
+        "month": "2024-10",
+        "mentions": 562,
+        "share": 19.51,
+        "rank": 13
+      },
+      {
+        "month": "2024-11",
+        "mentions": 580,
+        "share": 20.14,
+        "rank": 8
+      },
+      {
+        "month": "2024-12",
+        "mentions": 598,
+        "share": 20.76,
+        "rank": 3
+      },
+      {
+        "month": "2025-01",
+        "mentions": 616,
+        "share": 21.39,
+        "rank": 4
+      },
+      {
+        "month": "2025-02",
+        "mentions": 634,
+        "share": 22.01,
+        "rank": 4
+      },
+      {
+        "month": "2025-03",
+        "mentions": 652,
+        "share": 22.64,
+        "rank": 3
+      },
+      {
+        "month": "2025-04",
+        "mentions": 670,
+        "share": 23.26,
+        "rank": 3
+      },
+      {
+        "month": "2025-05",
+        "mentions": 688,
+        "share": 23.89,
+        "rank": 4
+      },
+      {
+        "month": "2025-06",
+        "mentions": 706,
+        "share": 24.51,
+        "rank": 4
+      }
+    ],
+    "dbt": [
+      {
+        "month": "2024-01",
+        "mentions": 260,
+        "share": 9.03,
+        "rank": 20
+      },
+      {
+        "month": "2024-02",
+        "mentions": 271,
+        "share": 9.41,
+        "rank": 20
+      },
+      {
+        "month": "2024-03",
+        "mentions": 282,
+        "share": 9.79,
+        "rank": 20
+      },
+      {
+        "month": "2024-04",
+        "mentions": 293,
+        "share": 10.17,
+        "rank": 20
+      },
+      {
+        "month": "2024-05",
+        "mentions": 304,
+        "share": 10.56,
+        "rank": 20
+      },
+      {
+        "month": "2024-06",
+        "mentions": 315,
+        "share": 10.94,
+        "rank": 20
+      },
+      {
+        "month": "2024-07",
+        "mentions": 326,
+        "share": 11.32,
+        "rank": 20
+      },
+      {
+        "month": "2024-08",
+        "mentions": 337,
+        "share": 11.7,
+        "rank": 18
+      },
+      {
+        "month": "2024-09",
+        "mentions": 348,
+        "share": 12.08,
+        "rank": 18
+      },
+      {
+        "month": "2024-10",
+        "mentions": 359,
+        "share": 12.47,
+        "rank": 20
+      },
+      {
+        "month": "2024-11",
+        "mentions": 370,
+        "share": 12.85,
+        "rank": 16
+      },
+      {
+        "month": "2024-12",
+        "mentions": 381,
+        "share": 13.23,
+        "rank": 17
+      },
+      {
+        "month": "2025-01",
+        "mentions": 392,
+        "share": 13.61,
+        "rank": 18
+      },
+      {
+        "month": "2025-02",
+        "mentions": 403,
+        "share": 13.99,
+        "rank": 15
+      },
+      {
+        "month": "2025-03",
+        "mentions": 414,
+        "share": 14.37,
+        "rank": 15
+      },
+      {
+        "month": "2025-04",
+        "mentions": 425,
+        "share": 14.76,
+        "rank": 15
+      },
+      {
+        "month": "2025-05",
+        "mentions": 436,
+        "share": 15.14,
+        "rank": 15
+      },
+      {
+        "month": "2025-06",
+        "mentions": 447,
+        "share": 15.52,
+        "rank": 15
+      }
+    ],
+    "docker": [
+      {
+        "month": "2024-01",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 11
+      },
+      {
+        "month": "2024-02",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 17
+      },
+      {
+        "month": "2024-03",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 4
+      },
+      {
+        "month": "2024-04",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 4
+      },
+      {
+        "month": "2024-05",
+        "mentions": 465,
+        "share": 16.15,
+        "rank": 15
+      },
+      {
+        "month": "2024-06",
+        "mentions": 341,
+        "share": 11.84,
+        "rank": 17
+      },
+      {
+        "month": "2024-07",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 6
+      },
+      {
+        "month": "2024-08",
+        "mentions": 574,
+        "share": 19.93,
+        "rank": 10
+      },
+      {
+        "month": "2024-09",
+        "mentions": 443,
+        "share": 15.38,
+        "rank": 15
+      },
+      {
+        "month": "2024-10",
+        "mentions": 472,
+        "share": 16.39,
+        "rank": 16
+      },
+      {
+        "month": "2024-11",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 5
+      },
+      {
+        "month": "2024-12",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 11
+      },
+      {
+        "month": "2025-01",
+        "mentions": 2115,
+        "share": 73.44,
+        "rank": 1
+      },
+      {
+        "month": "2025-02",
+        "mentions": 2077,
+        "share": 72.12,
+        "rank": 1
+      },
+      {
+        "month": "2025-03",
+        "mentions": 581,
+        "share": 20.17,
+        "rank": 8
+      },
+      {
+        "month": "2025-04",
+        "mentions": 555,
+        "share": 19.27,
+        "rank": 12
+      },
+      {
+        "month": "2025-05",
+        "mentions": 360,
+        "share": 12.5,
+        "rank": 17
+      },
+      {
+        "month": "2025-06",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 5
+      }
+    ],
+    "gcp": [
+      {
+        "month": "2024-01",
+        "mentions": 581,
+        "share": 20.17,
+        "rank": 10
+      },
+      {
+        "month": "2024-02",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 18
+      },
+      {
+        "month": "2024-03",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 5
+      },
+      {
+        "month": "2024-04",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 5
+      },
+      {
+        "month": "2024-05",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 12
+      },
+      {
+        "month": "2024-06",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 18
+      },
+      {
+        "month": "2024-07",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 7
+      },
+      {
+        "month": "2024-08",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 5
+      },
+      {
+        "month": "2024-09",
+        "mentions": 457,
+        "share": 15.87,
+        "rank": 14
+      },
+      {
+        "month": "2024-10",
+        "mentions": 360,
+        "share": 12.5,
+        "rank": 19
+      },
+      {
+        "month": "2024-11",
+        "mentions": 739,
+        "share": 25.66,
+        "rank": 3
+      },
+      {
+        "month": "2024-12",
+        "mentions": 2880,
+        "share": 100.0,
+        "rank": 1
+      },
+      {
+        "month": "2025-01",
+        "mentions": 1178,
+        "share": 40.9,
+        "rank": 2
+      },
+      {
+        "month": "2025-02",
+        "mentions": 502,
+        "share": 17.43,
+        "rank": 13
+      },
+      {
+        "month": "2025-03",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 7
+      },
+      {
+        "month": "2025-04",
+        "mentions": 555,
+        "share": 19.27,
+        "rank": 13
+      },
+      {
+        "month": "2025-05",
+        "mentions": 356,
+        "share": 12.36,
+        "rank": 19
+      },
+      {
+        "month": "2025-06",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 6
+      }
+    ],
+    "hadoop": [
+      {
+        "month": "2024-01",
+        "mentions": 860,
+        "share": 29.86,
+        "rank": 2
+      },
+      {
+        "month": "2024-02",
+        "mentions": 822,
+        "share": 28.54,
+        "rank": 3
+      },
+      {
+        "month": "2024-03",
+        "mentions": 784,
+        "share": 27.22,
+        "rank": 3
+      },
+      {
+        "month": "2024-04",
+        "mentions": 746,
+        "share": 25.9,
+        "rank": 2
+      },
+      {
+        "month": "2024-05",
+        "mentions": 708,
+        "share": 24.58,
+        "rank": 3
+      },
+      {
+        "month": "2024-06",
+        "mentions": 670,
+        "share": 23.26,
+        "rank": 3
+      },
+      {
+        "month": "2024-07",
+        "mentions": 632,
+        "share": 21.94,
+        "rank": 4
+      },
+      {
+        "month": "2024-08",
+        "mentions": 594,
+        "share": 20.62,
+        "rank": 3
+      },
+      {
+        "month": "2024-09",
+        "mentions": 556,
+        "share": 19.31,
+        "rank": 12
+      },
+      {
+        "month": "2024-10",
+        "mentions": 518,
+        "share": 17.99,
+        "rank": 15
+      },
+      {
+        "month": "2024-11",
+        "mentions": 480,
+        "share": 16.67,
+        "rank": 15
+      },
+      {
+        "month": "2024-12",
+        "mentions": 442,
+        "share": 15.35,
+        "rank": 15
+      },
+      {
+        "month": "2025-01",
+        "mentions": 404,
+        "share": 14.03,
+        "rank": 17
+      },
+      {
+        "month": "2025-02",
+        "mentions": 366,
+        "share": 12.71,
+        "rank": 16
+      },
+      {
+        "month": "2025-03",
+        "mentions": 328,
+        "share": 11.39,
+        "rank": 20
+      },
+      {
+        "month": "2025-04",
+        "mentions": 290,
+        "share": 10.07,
+        "rank": 20
+      },
+      {
+        "month": "2025-05",
+        "mentions": 252,
+        "share": 8.75,
+        "rank": 20
+      },
+      {
+        "month": "2025-06",
+        "mentions": 214,
+        "share": 7.43,
+        "rank": 20
+      }
+    ],
+    "hive": [
+      {
+        "month": "2024-01",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 5
+      },
+      {
+        "month": "2024-02",
+        "mentions": 569,
+        "share": 19.76,
+        "rank": 11
+      },
+      {
+        "month": "2024-03",
+        "mentions": 331,
+        "share": 11.49,
+        "rank": 18
+      },
+      {
+        "month": "2024-04",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 9
+      },
+      {
+        "month": "2024-05",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 5
+      },
+      {
+        "month": "2024-06",
+        "mentions": 457,
+        "share": 15.87,
+        "rank": 14
+      },
+      {
+        "month": "2024-07",
+        "mentions": 705,
+        "share": 24.48,
+        "rank": 2
+      },
+      {
+        "month": "2024-08",
+        "mentions": 2880,
+        "share": 100.0,
+        "rank": 1
+      },
+      {
+        "month": "2024-09",
+        "mentions": 1081,
+        "share": 37.53,
+        "rank": 2
+      },
+      {
+        "month": "2024-10",
+        "mentions": 374,
+        "share": 12.99,
+        "rank": 18
+      },
+      {
+        "month": "2024-11",
+        "mentions": 541,
+        "share": 18.78,
+        "rank": 12
+      },
+      {
+        "month": "2024-12",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 8
+      },
+      {
+        "month": "2025-01",
+        "mentions": 563,
+        "share": 19.55,
+        "rank": 13
+      },
+      {
+        "month": "2025-02",
+        "mentions": 341,
+        "share": 11.84,
+        "rank": 20
+      },
+      {
+        "month": "2025-03",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 6
+      },
+      {
+        "month": "2025-04",
+        "mentions": 573,
+        "share": 19.9,
+        "rank": 9
+      },
+      {
+        "month": "2025-05",
+        "mentions": 556,
+        "share": 19.31,
+        "rank": 12
+      },
+      {
+        "month": "2025-06",
+        "mentions": 359,
+        "share": 12.47,
+        "rank": 17
+      }
+    ],
+    "java": [
+      {
+        "month": "2024-01",
+        "mentions": 329,
+        "share": 11.42,
+        "rank": 16
+      },
+      {
+        "month": "2024-02",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 4
+      },
+      {
+        "month": "2024-03",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 8
+      },
+      {
+        "month": "2024-04",
+        "mentions": 515,
+        "share": 17.88,
+        "rank": 14
+      },
+      {
+        "month": "2024-05",
+        "mentions": 329,
+        "share": 11.42,
+        "rank": 18
+      },
+      {
+        "month": "2024-06",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 5
+      },
+      {
+        "month": "2024-07",
+        "mentions": 581,
+        "share": 20.17,
+        "rank": 11
+      },
+      {
+        "month": "2024-08",
+        "mentions": 499,
+        "share": 17.33,
+        "rank": 14
+      },
+      {
+        "month": "2024-09",
+        "mentions": 404,
+        "share": 14.03,
+        "rank": 16
+      },
+      {
+        "month": "2024-10",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 4
+      },
+      {
+        "month": "2024-11",
+        "mentions": 569,
+        "share": 19.76,
+        "rank": 9
+      },
+      {
+        "month": "2024-12",
+        "mentions": 331,
+        "share": 11.49,
+        "rank": 20
+      },
+      {
+        "month": "2025-01",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 7
+      },
+      {
+        "month": "2025-02",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 5
+      },
+      {
+        "month": "2025-03",
+        "mentions": 554,
+        "share": 19.24,
+        "rank": 12
+      },
+      {
+        "month": "2025-04",
+        "mentions": 361,
+        "share": 12.53,
+        "rank": 17
+      },
+      {
+        "month": "2025-05",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 5
+      },
+      {
+        "month": "2025-06",
+        "mentions": 1133,
+        "share": 39.34,
+        "rank": 2
+      }
+    ],
+    "kafka": [
+      {
+        "month": "2024-01",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 6
+      },
+      {
+        "month": "2024-02",
+        "mentions": 573,
+        "share": 19.9,
+        "rank": 10
+      },
+      {
+        "month": "2024-03",
+        "mentions": 331,
+        "share": 11.49,
+        "rank": 19
+      },
+      {
+        "month": "2024-04",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 10
+      },
+      {
+        "month": "2024-05",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 6
+      },
+      {
+        "month": "2024-06",
+        "mentions": 1657,
+        "share": 57.53,
+        "rank": 2
+      },
+      {
+        "month": "2024-07",
+        "mentions": 2521,
+        "share": 87.53,
+        "rank": 1
+      },
+      {
+        "month": "2024-08",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 8
+      },
+      {
+        "month": "2024-09",
+        "mentions": 582,
+        "share": 20.21,
+        "rank": 10
+      },
+      {
+        "month": "2024-10",
+        "mentions": 457,
+        "share": 15.87,
+        "rank": 17
+      },
+      {
+        "month": "2024-11",
+        "mentions": 361,
+        "share": 12.53,
+        "rank": 17
+      },
+      {
+        "month": "2024-12",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 9
+      },
+      {
+        "month": "2025-01",
+        "mentions": 571,
+        "share": 19.83,
+        "rank": 11
+      },
+      {
+        "month": "2025-02",
+        "mentions": 344,
+        "share": 11.94,
+        "rank": 19
+      },
+      {
+        "month": "2025-03",
+        "mentions": 571,
+        "share": 19.83,
+        "rank": 9
+      },
+      {
+        "month": "2025-04",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 8
+      },
+      {
+        "month": "2025-05",
+        "mentions": 556,
+        "share": 19.31,
+        "rank": 13
+      },
+      {
+        "month": "2025-06",
+        "mentions": 359,
+        "share": 12.47,
+        "rank": 18
+      }
+    ],
+    "kubernetes": [
+      {
+        "month": "2024-01",
+        "mentions": 476,
+        "share": 16.53,
+        "rank": 14
+      },
+      {
+        "month": "2024-02",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 19
+      },
+      {
+        "month": "2024-03",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 6
+      },
+      {
+        "month": "2024-04",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 6
+      },
+      {
+        "month": "2024-05",
+        "mentions": 473,
+        "share": 16.42,
+        "rank": 13
+      },
+      {
+        "month": "2024-06",
+        "mentions": 442,
+        "share": 15.35,
+        "rank": 15
+      },
+      {
+        "month": "2024-07",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 8
+      },
+      {
+        "month": "2024-08",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 11
+      },
+      {
+        "month": "2024-09",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 19
+      },
+      {
+        "month": "2024-10",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 8
+      },
+      {
+        "month": "2024-11",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 6
+      },
+      {
+        "month": "2024-12",
+        "mentions": 555,
+        "share": 19.27,
+        "rank": 12
+      },
+      {
+        "month": "2025-01",
+        "mentions": 356,
+        "share": 12.36,
+        "rank": 20
+      },
+      {
+        "month": "2025-02",
+        "mentions": 1388,
+        "share": 48.19,
+        "rank": 2
+      },
+      {
+        "month": "2025-03",
+        "mentions": 2880,
+        "share": 100.0,
+        "rank": 1
+      },
+      {
+        "month": "2025-04",
+        "mentions": 510,
+        "share": 17.71,
+        "rank": 14
+      },
+      {
+        "month": "2025-05",
+        "mentions": 360,
+        "share": 12.5,
+        "rank": 18
+      },
+      {
+        "month": "2025-06",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 7
+      }
+    ],
+    "powerbi": [
+      {
+        "month": "2024-01",
+        "mentions": 329,
+        "share": 11.42,
+        "rank": 17
+      },
+      {
+        "month": "2024-02",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 5
+      },
+      {
+        "month": "2024-03",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 9
+      },
+      {
+        "month": "2024-04",
+        "mentions": 499,
+        "share": 17.33,
+        "rank": 15
+      },
+      {
+        "month": "2024-05",
+        "mentions": 370,
+        "share": 12.85,
+        "rank": 16
+      },
+      {
+        "month": "2024-06",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 6
+      },
+      {
+        "month": "2024-07",
+        "mentions": 569,
+        "share": 19.76,
+        "rank": 12
+      },
+      {
+        "month": "2024-08",
+        "mentions": 331,
+        "share": 11.49,
+        "rank": 19
+      },
+      {
+        "month": "2024-09",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 8
+      },
+      {
+        "month": "2024-10",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 5
+      },
+      {
+        "month": "2024-11",
+        "mentions": 562,
+        "share": 19.51,
+        "rank": 11
+      },
+      {
+        "month": "2024-12",
+        "mentions": 341,
+        "share": 11.84,
+        "rank": 19
+      },
+      {
+        "month": "2025-01",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 8
+      },
+      {
+        "month": "2025-02",
+        "mentions": 575,
+        "share": 19.97,
+        "rank": 8
+      },
+      {
+        "month": "2025-03",
+        "mentions": 476,
+        "share": 16.53,
+        "rank": 14
+      },
+      {
+        "month": "2025-04",
+        "mentions": 361,
+        "share": 12.53,
+        "rank": 18
+      },
+      {
+        "month": "2025-05",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 6
+      },
+      {
+        "month": "2025-06",
+        "mentions": 571,
+        "share": 19.83,
+        "rank": 9
+      }
+    ],
+    "python": [
+      {
+        "month": "2024-01",
+        "mentions": 2880,
+        "share": 100.0,
+        "rank": 1
+      },
+      {
+        "month": "2024-02",
+        "mentions": 1553,
+        "share": 53.92,
+        "rank": 2
+      },
+      {
+        "month": "2024-03",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 12
+      },
+      {
+        "month": "2024-04",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 18
+      },
+      {
+        "month": "2024-05",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 7
+      },
+      {
+        "month": "2024-06",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 9
+      },
+      {
+        "month": "2024-07",
+        "mentions": 528,
+        "share": 18.33,
+        "rank": 14
+      },
+      {
+        "month": "2024-08",
+        "mentions": 342,
+        "share": 11.88,
+        "rank": 17
+      },
+      {
+        "month": "2024-09",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 5
+      },
+      {
+        "month": "2024-10",
+        "mentions": 573,
+        "share": 19.9,
+        "rank": 10
+      },
+      {
+        "month": "2024-11",
+        "mentions": 499,
+        "share": 17.33,
+        "rank": 14
+      },
+      {
+        "month": "2024-12",
+        "mentions": 383,
+        "share": 13.3,
+        "rank": 16
+      },
+      {
+        "month": "2025-01",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 5
+      },
+      {
+        "month": "2025-02",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 10
+      },
+      {
+        "month": "2025-03",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 19
+      },
+      {
+        "month": "2025-04",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 5
+      },
+      {
+        "month": "2025-05",
+        "mentions": 581,
+        "share": 20.17,
+        "rank": 8
+      },
+      {
+        "month": "2025-06",
+        "mentions": 555,
+        "share": 19.27,
+        "rank": 11
+      }
+    ],
+    "scala": [
+      {
+        "month": "2024-01",
+        "mentions": 329,
+        "share": 11.42,
+        "rank": 18
+      },
+      {
+        "month": "2024-02",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 6
+      },
+      {
+        "month": "2024-03",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 10
+      },
+      {
+        "month": "2024-04",
+        "mentions": 571,
+        "share": 19.83,
+        "rank": 12
+      },
+      {
+        "month": "2024-05",
+        "mentions": 329,
+        "share": 11.42,
+        "rank": 19
+      },
+      {
+        "month": "2024-06",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 7
+      },
+      {
+        "month": "2024-07",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 10
+      },
+      {
+        "month": "2024-08",
+        "mentions": 470,
+        "share": 16.32,
+        "rank": 15
+      },
+      {
+        "month": "2024-09",
+        "mentions": 355,
+        "share": 12.33,
+        "rank": 17
+      },
+      {
+        "month": "2024-10",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 6
+      },
+      {
+        "month": "2024-11",
+        "mentions": 569,
+        "share": 19.76,
+        "rank": 10
+      },
+      {
+        "month": "2024-12",
+        "mentions": 481,
+        "share": 16.7,
+        "rank": 13
+      },
+      {
+        "month": "2025-01",
+        "mentions": 434,
+        "share": 15.07,
+        "rank": 16
+      },
+      {
+        "month": "2025-02",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 6
+      },
+      {
+        "month": "2025-03",
+        "mentions": 562,
+        "share": 19.51,
+        "rank": 11
+      },
+      {
+        "month": "2025-04",
+        "mentions": 341,
+        "share": 11.84,
+        "rank": 19
+      },
+      {
+        "month": "2025-05",
+        "mentions": 2100,
+        "share": 72.92,
+        "rank": 1
+      },
+      {
+        "month": "2025-06",
+        "mentions": 2322,
+        "share": 80.62,
+        "rank": 1
+      }
+    ],
+    "snowflake": [
+      {
+        "month": "2024-01",
+        "mentions": 520,
+        "share": 18.06,
+        "rank": 12
+      },
+      {
+        "month": "2024-02",
+        "mentions": 542,
+        "share": 18.82,
+        "rank": 12
+      },
+      {
+        "month": "2024-03",
+        "mentions": 564,
+        "share": 19.58,
+        "rank": 13
+      },
+      {
+        "month": "2024-04",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 3
+      },
+      {
+        "month": "2024-05",
+        "mentions": 608,
+        "share": 21.11,
+        "rank": 4
+      },
+      {
+        "month": "2024-06",
+        "mentions": 630,
+        "share": 21.88,
+        "rank": 4
+      },
+      {
+        "month": "2024-07",
+        "mentions": 652,
+        "share": 22.64,
+        "rank": 3
+      },
+      {
+        "month": "2024-08",
+        "mentions": 674,
+        "share": 23.4,
+        "rank": 2
+      },
+      {
+        "month": "2024-09",
+        "mentions": 696,
+        "share": 24.17,
+        "rank": 3
+      },
+      {
+        "month": "2024-10",
+        "mentions": 718,
+        "share": 24.93,
+        "rank": 3
+      },
+      {
+        "month": "2024-11",
+        "mentions": 740,
+        "share": 25.69,
+        "rank": 2
+      },
+      {
+        "month": "2024-12",
+        "mentions": 762,
+        "share": 26.46,
+        "rank": 2
+      },
+      {
+        "month": "2025-01",
+        "mentions": 784,
+        "share": 27.22,
+        "rank": 3
+      },
+      {
+        "month": "2025-02",
+        "mentions": 806,
+        "share": 27.99,
+        "rank": 3
+      },
+      {
+        "month": "2025-03",
+        "mentions": 828,
+        "share": 28.75,
+        "rank": 2
+      },
+      {
+        "month": "2025-04",
+        "mentions": 850,
+        "share": 29.51,
+        "rank": 2
+      },
+      {
+        "month": "2025-05",
+        "mentions": 872,
+        "share": 30.28,
+        "rank": 3
+      },
+      {
+        "month": "2025-06",
+        "mentions": 894,
+        "share": 31.04,
+        "rank": 3
+      }
+    ],
+    "spark": [
+      {
+        "month": "2024-01",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 8
+      },
+      {
+        "month": "2024-02",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 9
+      },
+      {
+        "month": "2024-03",
+        "mentions": 945,
+        "share": 32.81,
+        "rank": 2
+      },
+      {
+        "month": "2024-04",
+        "mentions": 2880,
+        "share": 100.0,
+        "rank": 1
+      },
+      {
+        "month": "2024-05",
+        "mentions": 840,
+        "share": 29.17,
+        "rank": 2
+      },
+      {
+        "month": "2024-06",
+        "mentions": 573,
+        "share": 19.9,
+        "rank": 12
+      },
+      {
+        "month": "2024-07",
+        "mentions": 337,
+        "share": 11.7,
+        "rank": 18
+      },
+      {
+        "month": "2024-08",
+        "mentions": 578,
+        "share": 20.07,
+        "rank": 9
+      },
+      {
+        "month": "2024-09",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 6
+      },
+      {
+        "month": "2024-10",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 11
+      },
+      {
+        "month": "2024-11",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 19
+      },
+      {
+        "month": "2024-12",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 5
+      },
+      {
+        "month": "2025-01",
+        "mentions": 581,
+        "share": 20.17,
+        "rank": 10
+      },
+      {
+        "month": "2025-02",
+        "mentions": 528,
+        "share": 18.33,
+        "rank": 12
+      },
+      {
+        "month": "2025-03",
+        "mentions": 360,
+        "share": 12.5,
+        "rank": 17
+      },
+      {
+        "month": "2025-04",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 6
+      },
+      {
+        "month": "2025-05",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 9
+      },
+      {
+        "month": "2025-06",
+        "mentions": 499,
+        "share": 17.33,
+        "rank": 13
+      }
+    ],
+    "sql": [
+      {
+        "month": "2024-01",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 9
+      },
+      {
+        "month": "2024-02",
+        "mentions": 1912,
+        "share": 66.39,
+        "rank": 1
+      },
+      {
+        "month": "2024-03",
+        "mentions": 2501,
+        "share": 86.84,
+        "rank": 1
+      },
+      {
+        "month": "2024-04",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 19
+      },
+      {
+        "month": "2024-05",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 8
+      },
+      {
+        "month": "2024-06",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 10
+      },
+      {
+        "month": "2024-07",
+        "mentions": 492,
+        "share": 17.08,
+        "rank": 17
+      },
+      {
+        "month": "2024-08",
+        "mentions": 360,
+        "share": 12.5,
+        "rank": 16
+      },
+      {
+        "month": "2024-09",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 7
+      },
+      {
+        "month": "2024-10",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 12
+      },
+      {
+        "month": "2024-11",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 20
+      },
+      {
+        "month": "2024-12",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 6
+      },
+      {
+        "month": "2025-01",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 6
+      },
+      {
+        "month": "2025-02",
+        "mentions": 555,
+        "share": 19.27,
+        "rank": 11
+      },
+      {
+        "month": "2025-03",
+        "mentions": 357,
+        "share": 12.4,
+        "rank": 18
+      },
+      {
+        "month": "2025-04",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 7
+      },
+      {
+        "month": "2025-05",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 10
+      },
+      {
+        "month": "2025-06",
+        "mentions": 498,
+        "share": 17.29,
+        "rank": 14
+      }
+    ],
+    "tableau": [
+      {
+        "month": "2024-01",
+        "mentions": 329,
+        "share": 11.42,
+        "rank": 19
+      },
+      {
+        "month": "2024-02",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 7
+      },
+      {
+        "month": "2024-03",
+        "mentions": 581,
+        "share": 20.17,
+        "rank": 11
+      },
+      {
+        "month": "2024-04",
+        "mentions": 331,
+        "share": 11.49,
+        "rank": 17
+      },
+      {
+        "month": "2024-05",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 9
+      },
+      {
+        "month": "2024-06",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 8
+      },
+      {
+        "month": "2024-07",
+        "mentions": 569,
+        "share": 19.76,
+        "rank": 13
+      },
+      {
+        "month": "2024-08",
+        "mentions": 331,
+        "share": 11.49,
+        "rank": 20
+      },
+      {
+        "month": "2024-09",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 9
+      },
+      {
+        "month": "2024-10",
+        "mentions": 586,
+        "share": 20.35,
+        "rank": 7
+      },
+      {
+        "month": "2024-11",
+        "mentions": 506,
+        "share": 17.57,
+        "rank": 13
+      },
+      {
+        "month": "2024-12",
+        "mentions": 361,
+        "share": 12.53,
+        "rank": 18
+      },
+      {
+        "month": "2025-01",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 9
+      },
+      {
+        "month": "2025-02",
+        "mentions": 571,
+        "share": 19.83,
+        "rank": 9
+      },
+      {
+        "month": "2025-03",
+        "mentions": 498,
+        "share": 17.29,
+        "rank": 13
+      },
+      {
+        "month": "2025-04",
+        "mentions": 398,
+        "share": 13.82,
+        "rank": 16
+      },
+      {
+        "month": "2025-05",
+        "mentions": 584,
+        "share": 20.28,
+        "rank": 7
+      },
+      {
+        "month": "2025-06",
+        "mentions": 556,
+        "share": 19.31,
+        "rank": 10
+      }
+    ],
+    "terraform": [
+      {
+        "month": "2024-01",
+        "mentions": 499,
+        "share": 17.33,
+        "rank": 13
+      },
+      {
+        "month": "2024-02",
+        "mentions": 401,
+        "share": 13.92,
+        "rank": 16
+      },
+      {
+        "month": "2024-03",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 7
+      },
+      {
+        "month": "2024-04",
+        "mentions": 574,
+        "share": 19.93,
+        "rank": 11
+      },
+      {
+        "month": "2024-05",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 17
+      },
+      {
+        "month": "2024-06",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 11
+      },
+      {
+        "month": "2024-07",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 9
+      },
+      {
+        "month": "2024-08",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 12
+      },
+      {
+        "month": "2024-09",
+        "mentions": 330,
+        "share": 11.46,
+        "rank": 20
+      },
+      {
+        "month": "2024-10",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 9
+      },
+      {
+        "month": "2024-11",
+        "mentions": 581,
+        "share": 20.17,
+        "rank": 7
+      },
+      {
+        "month": "2024-12",
+        "mentions": 458,
+        "share": 15.9,
+        "rank": 14
+      },
+      {
+        "month": "2025-01",
+        "mentions": 360,
+        "share": 12.5,
+        "rank": 19
+      },
+      {
+        "month": "2025-02",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 7
+      },
+      {
+        "month": "2025-03",
+        "mentions": 570,
+        "share": 19.79,
+        "rank": 10
+      },
+      {
+        "month": "2025-04",
+        "mentions": 2828,
+        "share": 98.19,
+        "rank": 1
+      },
+      {
+        "month": "2025-05",
+        "mentions": 1365,
+        "share": 47.4,
+        "rank": 2
+      },
+      {
+        "month": "2025-06",
+        "mentions": 585,
+        "share": 20.31,
+        "rank": 8
+      }
+    ]
+  },
+  "latest": [
+    {
+      "rank": 1,
+      "skill": "scala",
+      "mentions": 2322,
+      "share": 80.62
+    },
+    {
+      "rank": 2,
+      "skill": "java",
+      "mentions": 1133,
+      "share": 39.34
+    },
+    {
+      "rank": 3,
+      "skill": "snowflake",
+      "mentions": 894,
+      "share": 31.04
+    },
+    {
+      "rank": 4,
+      "skill": "databricks",
+      "mentions": 706,
+      "share": 24.51
+    },
+    {
+      "rank": 5,
+      "skill": "docker",
+      "mentions": 585,
+      "share": 20.31
+    },
+    {
+      "rank": 6,
+      "skill": "gcp",
+      "mentions": 585,
+      "share": 20.31
+    },
+    {
+      "rank": 7,
+      "skill": "kubernetes",
+      "mentions": 585,
+      "share": 20.31
+    },
+    {
+      "rank": 8,
+      "skill": "terraform",
+      "mentions": 585,
+      "share": 20.31
+    },
+    {
+      "rank": 9,
+      "skill": "powerbi",
+      "mentions": 571,
+      "share": 19.83
+    },
+    {
+      "rank": 10,
+      "skill": "tableau",
+      "mentions": 556,
+      "share": 19.31
+    }
+  ],
+  "snowflakeCompanions": [
+    {
+      "skill": "scala",
+      "confidence": 100.0,
+      "lift": 1.24
+    },
+    {
+      "skill": "dbt",
+      "confidence": 50.0,
+      "lift": 3.22
+    },
+    {
+      "skill": "docker",
+      "confidence": 38.14,
+      "lift": 1.88
+    },
+    {
+      "skill": "gcp",
+      "confidence": 38.14,
+      "lift": 1.88
+    },
+    {
+      "skill": "azure",
+      "confidence": 32.21,
+      "lift": 1.74
+    }
+  ],
+  "validation": [
+    [
+      "Local Spark",
+      "31 checks passed across two complete, identical runs."
+    ],
+    [
+      "Databricks",
+      "26 notebook expectations passed; scheduled run succeeded in 2m 42s."
+    ],
+    [
+      "Cloud transfer",
+      "All exported rows reconciled with the independent local evidence."
+    ],
+    [
+      "Snowflake",
+      "First load succeeded; repeat COPY skipped the same files; 14 checks passed."
+    ]
+  ]
+}

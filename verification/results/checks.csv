@@ -1,0 +1,32 @@
+check,actual,expected,passed,critical
+bronze_postings,55350,55350,true,true
+bronze_companies,400,400,true,true
+silver_postings,51840,51840,true,true
+duplicate_posting,1350,1350,true,true
+no_skills_listed,1350,1350,true,true
+unknown_company,540,540,true,true
+unparseable_date,270,270,true,true
+row_reconciliation,55350,55350,true,true
+distinct_raw_skills,57,57,true,true
+canonical_skills,20,20,true,true
+invalid_clean_tokens,0,0,true,true
+duplicate_posting_skill_keys,0,0,true,true
+gold_skill_month,360,360,true,true
+gold_pair_month,6660,6660,true,false
+monthly_denominators,[2880],[2880],true,true
+mentions_snowflake,12726,12726,true,true
+mentions_databricks,9954,9954,true,true
+mentions_hadoop,9666,9666,true,true
+mentions_dbt,6363,6363,true,true
+snowflake_first_last,"[520, 894]","[520, 894]",true,true
+databricks_first_last,"[400, 706]","[400, 706]",true,true
+hadoop_first_last,"[860, 214]","[860, 214]",true,true
+pair_bounds,0,0,true,true
+snowflake_top_companion,dbt,dbt,true,false
+snowflake_dbt_confidence,0.5,0.5,true,true
+other_companions_below_030,true,true,true,false
+independent_skill_counts,true,true,true,true
+independent_pair_counts,true,true,true,true
+independent_posting_skill_rows,true,true,true,true
+independent_rejection_counts,true,true,true,true
+export_reload_and_three_sql_queries,"{'q1': 180, 'q2': 120, 'q3': 60}","{'q1': 180, 'q2': 120, 'q3': 60}",true,true
